@@ -1,0 +1,69 @@
+{
+    "React → Component": {
+        "exclude": [
+            "**/*.{spec,stories,story,test}.{ts,tsx}"
+        ],
+        "scope": "typescriptreact",
+        "isFileTemplate": true,
+        "body": [
+            "type Props = {};",
+            "",
+            "export const ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/} = ({ ...props }: Props) => {",
+            "\treturn (",
+            "\t\t<>",
+            "\t\t\t$0",
+            "\t\t</>",
+            "\t)",
+            "};",
+            "",
+        ]
+    },
+
+    "React → Context": {
+        "exclude": [
+            "**/*.{spec,stories,story,test}.{ts,tsx}"
+        ],
+        "scope": "typescriptreact",
+        "isFileTemplate": true,
+        "body": [
+            "import type { Context } from \"react\";",
+            "import { createContext, use } from \"react\";",
+            "",
+            "type ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/} = {};",
+            "",
+            "export const ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/} = createContext<${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}>({});",
+            "",
+            "export const use${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/} = (context: Context<${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}>) => {",
+            "\tconst ${TM_FILENAME_BASE/(.*)/${1:/camelcase}/} = use(context);",
+            "",
+            "\treturn [${TM_FILENAME_BASE/(.*)/${1:/camelcase}/}, {}] as const;"
+        ]
+    },
+
+    "Tanstack Router → File Route": {
+        "exclude": [
+            "**/routes/**/*.{spec,stories,story,test}.{ts,tsx}"
+        ],
+        "scope": "typescriptreact",
+        "isFileTemplate": true,
+        "body": [
+            "const route = createFileRoute(\"${1:\/}\");",
+            "",
+            "export const Route = route({",
+            "\tcomponent: View,",
+            "\t// scripts: []",
+            "\t// head: () => ({})",
+            "\t// loader: async () => {}",
+            "});",
+            "",
+            "function View() {",
+            "\treturn (",
+            "\t\t<>",
+            "\t\t\t$0",
+            "\t\t</>",
+            "\t)",
+            "};",
+            "",
+        ]
+    }
+}

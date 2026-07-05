@@ -1,0 +1,20 @@
+export default {
+  from: "@tanstack/react-query",
+  imports: [
+    "QueryErrorResetBoundary",
+    "useQuery",
+    "useQueries",
+    "useInfiniteQuery",
+    "useMutation",
+    "useIsFetching",
+    "useIsMutating",
+    "useMutationState",
+    "useSuspenseQuery",
+    "useSuspenseInfiniteQuery",
+    "useSuspenseQueries",
+    "useQueryClient",
+    "usePrefetchQuery",
+    "usePrefetchInfiniteQuery",
+    "useQueryErrorResetBoundary",
+  ],
+};

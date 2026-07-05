@@ -1,0 +1,20 @@
+export default {
+  from: "react-use",
+  imports: [
+    "useAsync",
+    "useAsyncFn",
+    "useAsyncRetry",
+    "useBeforeUnload",
+    "useCookie",
+    "useCopyToClipboard",
+    "useDebounce",
+    "useError",
+    "useFavicon",
+    "useLockBodyScroll",
+    "useRafLoop",
+    "useThrottle",
+    "useThrottleFn",
+    "useTitle",
+    "usePermission",
+  ],
+};

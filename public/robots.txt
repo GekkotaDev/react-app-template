@@ -1,0 +1,7 @@
+# If AI agent web scraping becomes a problem, please refer to this amongst other
+# solutions such as Cloudflare.
+# https://github.com/ai-robots-txt/ai.robots.txt/blob/main/robots.txt
+
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Disallow:

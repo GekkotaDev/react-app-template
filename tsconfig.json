@@ -1,0 +1,37 @@
+{
+  "files": ["./auto-imports.d.ts"],
+  "include": ["**/*.ts", "**/*.tsx"],
+  "compilerOptions": {
+    "target": "ES2022",
+    "jsx": "react-jsx",
+    "module": "ESNext",
+    "paths": {
+      "#/*": ["./src/*"],
+      "@/*": ["./src/*"],
+      "$context/*": ["./src/context/*"],
+      "$components/*": ["./src/components/*"],
+      "$hooks/*": ["./src/hooks/*"],
+      "$mutations/*": ["./src/mutations/*"],
+      "$queries/*": ["./src/queries/*"],
+      "$stores/*": ["./src/stores/*"],
+      "$utils/*": ["./src/utils/*"],
+      "$features/*": ["./src/features/*"]
+    },
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "types": ["vite/client", "vite-plugin-pwa/react"],
+
+    /* Bundler mode */
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "verbatimModuleSyntax": true,
+    "noEmit": true,
+
+    /* Linting */
+    "skipLibCheck": true,
+    "strict": true,
+    "noUnusedLocals": false, // Handled by oxlint.
+    "noUnusedParameters": false, // Handled by oxlint.
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedSideEffectImports": true
+  }
+}

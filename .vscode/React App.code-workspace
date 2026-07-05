@@ -1,0 +1,60 @@
+{
+  "folders": [
+    {
+      "path": "..",
+    },
+  ],
+  "extensions": {
+    "recommendations": [
+      "aaron-bond.better-comments",
+      "bradlc.vscode-tailwindcss",
+      "dbaeumer.vscode-eslint",
+      "oxc.oxc-vscode",
+      "usernamehw.errorlens",
+      "vitest.explorer",
+    ],
+  },
+  "launch": {
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "type": "node",
+        "request": "launch",
+        "name": "Debug Current Test File",
+        "autoAttachChildProcesses": true,
+        "skipFiles": ["<node_internals>/**", "**/node_modules/**"],
+        "program": "${workspaceRoot}/node_modules/vitest/vitest.mjs",
+        "args": ["run", "${relativeFile}"],
+        "smartStep": true,
+        "console": "integratedTerminal",
+      },
+    ],
+    "compounds": [],
+  },
+  "settings": {
+    "[css]": {
+      "editor.defaultFormatter": "oxc.oxc-vscode",
+    },
+    "[typescript]": {
+      "editor.defaultFormatter": "oxc.oxc-vscode",
+    },
+    "[typescriptreact]": {
+      "editor.defaultFormatter": "oxc.oxc-vscode",
+    },
+
+    "editor.snippetSuggestions": "none",
+    "editor.tabSize": 2,
+    "tailwindCSS.classFunctions": ["tw"],
+
+    //* Tanstack Settings
+    "files.watcherExclude": {
+      "**/routeTree.gen.ts": true,
+    },
+    "search.exclude": {
+      "**/routeTree.gen.ts": true,
+    },
+    "files.readonlyInclude": {
+      "**/routeTree.gen.ts": true,
+    },
+  },
+}
