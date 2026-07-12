@@ -77,6 +77,7 @@ export default defineConfig({
           includeSource: [`src/routes/**/*.{ts,js}`],
 
           browser: {
+            api: 7357,
             enabled: true,
             provider: playwright(),
             // https://vitest.dev/config/browser/playwright
@@ -103,6 +104,7 @@ export default defineConfig({
         test: {
           name: "storybook",
           browser: {
+            api: 7357,
             enabled: true,
             headless: true,
             provider: playwright({}),

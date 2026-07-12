@@ -1,0 +1,9 @@
+services:
+  playwright:
+    init: true
+    image: mcr.microsoft.com/playwright:v1.61.0-noble
+    command: /bin/sh -c "npx -y playwright@1.61.0 run-server --port 7357 --host 0.0.0.0"
+    working_dir: /home/pwuser
+    user: pwuser
+    ports:
+      - 7357:7357
