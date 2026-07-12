@@ -50,14 +50,18 @@
 - 🏗️ Automated code scaffolding — `pnpm generate`
 - 📦 Bundle visualizer — see what's increasing your bundle size
 
-## Quick Start
+## Quick Start[^1]
 
 ### Linux
 
+Open either Konsole or GNOME Terminal then copy and paste each line one by one
+
 ```sh
+# Skip if you already have these installed
 curl -fsSL https://get.pnpm.io/install.sh | sh -
 flatpak install flathub io.podman_desktop.PodmanDesktop
 
+# Required
 pnpm runtime set node lts -g
 pnpm i
 pnpm start
@@ -65,10 +69,14 @@ pnpm start
 
 ### Windows
 
+Open Windows Terminal then copy and paste each line one by one
+
 ```powershell
+# Skip if you already have these installed
 winget install -e --id pnpm.pnpm
 winget install -e --id RedHat.Podman
 
+# Required
 pnpm runtime set node lts -g
 pnpm i
 pnpm start
@@ -99,7 +107,7 @@ In addition, you'll likely want to consider a library for the following concerns
   - [`evlog`](https://www.evlog.dev/integrate/frameworks/tanstack-start)
 - **Storage**
   - [`unstorage`](https://unstorage.unjs.io/)
-- **OpenAPI**[^1]
+- **OpenAPI**[^2]
   - [Nitro](https://nitro.build/examples/vite-ssr-tss-react)
   - [`orpc`](https://orpc.dev)
   - [Hono OpenAPI](https://hono.dev/examples/hono-openapi)
@@ -111,4 +119,8 @@ In addition, you'll likely want to consider a library for the following concerns
 
 BSD0 **or** Apache License 2.0
 
-[^1]: OpenAPI can automatically generate documentation and client SDKs; this is particularly useful if your service provides API access or if you maintain separate native clients.
+[//]: # (Footnotes)
+
+[^1]: These instructions can not be simplified any further. You will need to familiarize yourself with your operating system's tools.
+
+[^2]: OpenAPI can automatically generate documentation and client SDKs; this is particularly useful if your service provides API access or if you maintain separate native clients.
