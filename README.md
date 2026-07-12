@@ -39,17 +39,19 @@
 ## Features
 
 - 🚅 [pnpm] + [oxc] + [Vite] + [TypeScript 7] — faster than ever development experience
+- 🛡️ [Stricter supply chain security settings](https://pnpm.io/supply-chain-security)
+- 🎭 [Containerized](https://podman.io/) [Playwright] — run Playwright on unsupported distros
+- 🧪 [Vitest] + [Playwright] + [Storybook] + [Fast Check] — comprehensive application testing 
+- 🏝️ TanStack [Router] + [Query] — declarative application type safety
+- 👻 [Jotai] + [Bunshi] — simple, flexible, and scalable state management
 - 🎩 [Type safe tree shaken automatic imports — no bloat, no import keyword needed](https://github.com/unplugin/unplugin-auto-import)
 - 🏗️ Automated code scaffolding — `pnpm generate`
-- 🎭 [Containerized](https://podman.io/) [Playwright] — run Playwright on unsupported distros
-- 🏝️ TanStack [Router] + [Query] — comprehensive application type safety
-- 🧪 [Vitest] + [Playwright] + [Storybook] + [Fast Check] — comprehensive application testing 
-- 👻 [Jotai] + [Bunshi] — simple, flexible, and scalable state management
 - 📦 Bundle visualizer — see what's increasing your bundle size
 
 ## Template Task List
 
-- [ ] Install [Podman](https://podman.io/)
+- [ ] Install [pnpm](https://pnpm.io/installation)
+- [ ] Install [Podman](https://podman.io/docs/installation)
 - [ ] Update `LICENSE` file for open source software **or** remove it.
 - [ ] Change the icons `favicon.ico`, `pwa-192x192.png`, and `pwa-512x512.png` in `/public`
 - [ ] Configure `pwa.config.ts`

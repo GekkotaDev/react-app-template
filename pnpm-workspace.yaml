@@ -1,5 +1,8 @@
-allowBuilds:
+# ! Security policies !
+minimumReleaseAge: 1000  # Comment to wait for 1 day instead of 1 week to use latest verison
+blockExoticSubdeps: true  # Subdependencies not allowed to use Git or SSH URLs
+trustPolicy: no-downgrade  # Don't upgrade if trust level has decreased
+allowBuilds:  # Dependencies allowed to run installation scripts
   esbuild: true
+  lightningcss: true
   msw: true
-onlyBuiltDependencies:
-  - lightningcss
