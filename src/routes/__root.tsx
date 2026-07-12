@@ -6,6 +6,7 @@ import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools";
 import { DevTools as JotaiDevTools } from "jotai-devtools";
 import { StrictMode } from "react";
 
+import "jotai-devtools/styles.css";
 import "../default.css";
 
 const queryClient = new QueryClient();
@@ -17,6 +18,8 @@ export const Route = createRootRoute({
 function RootComponent() {
   return (
     <StrictMode>
+      <JotaiDevTools />
+
       <QueryClientProvider client={queryClient}>
         <Outlet />
         <TanStackDevtools
