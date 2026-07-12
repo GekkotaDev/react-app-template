@@ -1,0 +1,22 @@
+/**
+ * Page metadata.
+ */
+export const frontmatter = {
+  head: {},
+
+  script: {},
+
+  content: {},
+};
+
+const route = createFileRoute(`{{ route }}`);
+export const Route = route({
+  component: View,
+  // scripts: []
+  // head: () => ({})
+  // loader: async () => {}
+});
+
+function View() {
+  return <></>;
+}

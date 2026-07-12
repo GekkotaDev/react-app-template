@@ -1,0 +1,14 @@
+import { useQuery } from "@tanstack/react-query";
+
+const keys = {
+  default: () => [],
+} as const;
+
+const query = (key: ReturnType<(typeof keys)[keyof typeof keys]> = keys.default()) => {
+  return useQuery({
+    queryKey: key,
+    queryFn: () => {},
+  });
+};
+
+export const use{{ pascalCase query }}Query = Object.assign(query, { keys });

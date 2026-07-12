@@ -1,0 +1,15 @@
+import { createContext, use } from "react";
+
+type {{ pascalCase feature }}Context = {
+
+};
+
+export const {{ pascalCase feature }}Context = createContext<{{ pascalCase feature }}Context>({
+  
+});
+
+export const use{{ pascalCase feature }}Context = () => {
+  const {{ camelCase feature }} = use({{ pascalCase feature }}Context);
+
+  return [{{ camelCase feature }}, {}] as const;
+};

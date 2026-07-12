@@ -1,0 +1,38 @@
+import type { Meta, StoryObj } from "@storybook/tanstack-react";
+// import {} from "storybook/test";
+
+import { Route } from "./{{ slug route }}";
+
+const Providers = composeProviders();
+
+// More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
+const meta = {
+  title: "Routes{{ titleCase route }}",
+  parameters: {
+    // More on how to position stories at: https://storybook.js.org/docs/configure/story-layout
+    layout: "fullscreen",
+    tanstack: {
+      // Example of providing a custom route for a story.
+      // The page component is extracted if a component is not set for the story.
+      // More on mocking Tanstack Router at: https://storybook.js.org/docs/get-started/tanstack-react#routing
+      router: {
+        route: Route,
+      },
+    },
+  },
+
+  decorators: (Story) => (
+    <Providers>
+      <Story />
+    </Providers>
+  ),
+} satisfies Meta<typeof Route>;
+
+export default meta;
+type Story = StoryObj<typeof meta>;
+
+// More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
+// More on component testing: https://storybook.js.org/docs/writing-tests/interaction-testing
+export const Sample: Story = {
+  // play: async () => {}
+};

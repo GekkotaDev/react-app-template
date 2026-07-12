@@ -1,0 +1,19 @@
+import { setupServer } from 'msw/node'
+import { http, HttpResponse } from 'msw'
+
+import { use{{ pascalCase query }}Query }
+
+const handlers = [
+  http.get("https://example.com/api/rest/v1/endpoint", () => {
+    return HttpResponse.json({})
+  })
+]
+
+const server = setupServer(...handlers)
+
+beforeAll(() => server.listen({ onUnhandledRequest: "error" }))
+afterEach(() => server.resetHandlers())
+
+describe("{{ titleCase query }} Query", () => {})
+
+afterAll(() => server.close())

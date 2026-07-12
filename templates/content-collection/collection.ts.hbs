@@ -1,0 +1,13 @@
+import { defineCollection } from "@content-collections/core";
+import * as v from "valibot";
+
+const schema = v.object({});
+
+export default defineCollection({
+  name: "{{ titleCase name }}",
+  directory: "content/{{ kebabCase name }}",
+  include: ["**/*.yaml"],
+  parser: "yaml",
+
+  schema,
+});
