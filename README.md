@@ -1,3 +1,5 @@
+![gekkotadev's React app template](./og-img.png)
+
 <hgroup>
   <h1 align="center">
     React App Template
