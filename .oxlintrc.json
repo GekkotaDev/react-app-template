@@ -24,7 +24,10 @@
       "typecheck": true
     }
   },
-  "rules": {},
+  "rules": {
+    "react/jsx-no-undef": "off",
+    "typescript/consistent-type-imports": "warn"
+  },
   "env": {
     "builtin": true
   }
