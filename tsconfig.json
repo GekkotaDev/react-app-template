@@ -18,7 +18,7 @@
       "$features/*": ["./src/features/*"]
     },
     "lib": ["ES2022", "DOM", "DOM.Iterable"],
-    "types": ["vite/client", "vite-plugin-pwa/react"],
+    "types": ["vite/client", "vite-plugin-pwa/react", "vitest/globals"],
 
     /* Bundler mode */
     "moduleResolution": "bundler",

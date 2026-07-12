@@ -10,6 +10,7 @@ declare global {
   const AnimateActivity: typeof import('motion/react').AnimateActivity
   const AnimatePresence: typeof import('motion/react').AnimatePresence
   const AnimateView: typeof import('motion/react').AnimateView
+  const Apple: typeof import('./src/components/apple').Apple
   const CatchBoundary: typeof import('@tanstack/react-router').CatchBoundary
   const CatchNotFound: typeof import('@tanstack/react-router').CatchNotFound
   const ErrorComponent: typeof import('@tanstack/react-router').ErrorComponent
@@ -24,7 +25,9 @@ declare global {
   const QueryErrorResetBoundary: typeof import('@tanstack/react-query').QueryErrorResetBoundary
   const ReactivityContext: typeof import('./src/context/reactivity-context').ReactivityContext
   const Reorder: typeof import('motion/react').Reorder
+  const Sample: typeof import('./src/components/apple.stories').Sample
   const Suspense: typeof import('react').Suspense
+  const appleStories: typeof import('./src/components/apple.stories').default
   const atom: typeof import('jotai').atom
   const atomEffect: typeof import('jotai-effect').atomEffect
   const atomFamily: typeof import('jotai/utils').atomFamily
@@ -70,6 +73,7 @@ declare global {
   const loadable: typeof import('jotai/utils').loadable
   const match: typeof import('ts-pattern').match
   const memo: typeof import('react').memo
+  const meta: typeof import('./src/components/apple.stories').meta
   const observe: typeof import('jotai-effect').observe
   const preconnect: typeof import('react-dom').preconnect
   const prefetchDNS: typeof import('react-dom').prefetchDNS

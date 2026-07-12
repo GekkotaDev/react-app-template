@@ -1,9 +1,10 @@
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { Outlet, createRootRoute } from "@tanstack/react-router";
-
 import { TanStackDevtools } from "@tanstack/react-devtools";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtoolsPanel } from "@tanstack/react-query-devtools";
+import { Outlet, createRootRoute } from "@tanstack/react-router";
 import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools";
+import { DevTools as JotaiDevTools } from "jotai-devtools";
+import { StrictMode } from "react";
 
 import "../default.css";
 
@@ -15,7 +16,7 @@ export const Route = createRootRoute({
 
 function RootComponent() {
   return (
-    <>
+    <StrictMode>
       <QueryClientProvider client={queryClient}>
         <Outlet />
         <TanStackDevtools
@@ -34,6 +35,6 @@ function RootComponent() {
           ]}
         />
       </QueryClientProvider>
-    </>
+    </StrictMode>
   );
 }

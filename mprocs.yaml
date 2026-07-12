@@ -1,0 +1,12 @@
+procs:
+  dev:
+    cmd: ["pnpm", "dev"]
+
+  spec:
+
+    cmd: ["pnpm", "spec"]
+  spec:playwright:
+    cmd: ["podman", "compose", "playwright"]
+
+  storybook:
+    cmd: ["pnpm", "storybook:dev"]

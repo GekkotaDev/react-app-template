@@ -1,10 +1,11 @@
 import AutoImport from "unplugin-auto-import/vite";
 
+import bunshi from "./bunshi";
+import dndKit from "./dnd-kit";
 import * as jotai from "./jotai";
-
-import reactUse from "./react-use";
 import motion from "./motion";
 import query from "./query";
+import reactUse from "./react-use";
 import router from "./router";
 import tsPattern from "./ts-pattern";
 
@@ -14,6 +15,7 @@ export default AutoImport({
     "react",
     "react-dom",
 
+    dndKit,
     reactUse,
     motion,
     query,
@@ -25,6 +27,7 @@ export default AutoImport({
     jotai.storage,
     jotai.effect,
     jotai.query,
+    ...bunshi,
   ],
 
   dirs: [
@@ -36,4 +39,6 @@ export default AutoImport({
     "./src/stores",
     "./src/utils",
   ],
+
+  ignore: ["*.stories.*"],
 });
