@@ -50,6 +50,30 @@
 - 🏗️ Automated code scaffolding — `pnpm generate`
 - 📦 Bundle visualizer — see what's increasing your bundle size
 
+## Quick Start
+
+### Linux
+
+```sh
+curl -fsSL https://get.pnpm.io/install.sh | sh -
+flatpak install flathub io.podman_desktop.PodmanDesktop
+
+pnpm runtime set node lts -g
+pnpm i
+pnpm start
+```
+
+### Windows
+
+```powershell
+winget install -e --id pnpm.pnpm
+winget install -e --id RedHat.Podman
+
+pnpm runtime set node lts -g
+pnpm i
+pnpm start
+```
+
 ## Template Task List
 
 - [ ] Install [pnpm](https://pnpm.io/installation)
