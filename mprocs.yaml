@@ -5,8 +5,8 @@ procs:
   spec:
 
     cmd: ["pnpm", "spec"]
-  spec:playwright:
-    cmd: ["podman", "compose", "playwright"]
+  # spec:playwright:
+  #   cmd: ["podman", "compose", "run", "playwright"]
 
   storybook:
     cmd: ["pnpm", "storybook:dev"]

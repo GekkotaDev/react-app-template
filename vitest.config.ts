@@ -1,9 +1,11 @@
-import { defineConfig } from "vitest/config";
-import { playwright } from "@vitest/browser-playwright";
-import viteConfig from "./vite.config";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+
 import { storybookTest } from "@storybook/addon-vitest/vitest-plugin";
+import { playwright } from "@vitest/browser-playwright";
+import { defineConfig } from "vitest/config";
+
+import viteConfig from "./vite.config";
 const dirname =
   typeof __dirname !== "undefined" ? __dirname : path.dirname(fileURLToPath(import.meta.url));
 
@@ -12,9 +14,39 @@ const folders = ["context", "components", "hooks", "mutations", "queries", "stor
 export default defineConfig({
   plugins: viteConfig.plugins,
   test: {
+    globalSetup: ["vitest-setup.browser.ts"],
     reporters: ["default", "github-actions", "html", "json"],
     strictTags: true,
     tags: [
+      // Environment tags.
+      {
+        name: "server",
+        description: "Node.js / Deno testing environment",
+      },
+      {
+        name: "browser",
+        description: "Browser testing environment",
+      },
+
+      // Type tags.
+      {
+        name: "unit",
+        description: "Unit tests.",
+      },
+      {
+        name: "story",
+        description: "Stories.",
+      },
+      {
+        name: "integration",
+        description: "Integration tests.",
+      },
+      {
+        name: "staging",
+        description: "Tests resembling production environment; requires test containers.",
+      },
+
+      // Meta tags.
       {
         name: "deprecated",
         description: "Deprecated features, will be removed.",
@@ -68,11 +100,19 @@ export default defineConfig({
       },
       {
         extends: true,
+        plugins: [
+          // The plugin will run tests for the stories defined in your Storybook config
+          // See options at: https://storybook.js.org/docs/next/writing-tests/integrations/vitest-addon#storybooktest
+          storybookTest({
+            configDir: path.join(dirname, ".storybook"),
+          }),
+        ],
         test: {
           name: "browser",
           include: [
-            `src/tests/**/*.e2e.{test,spec}.{ts,js}`,
-            `src/routes/**/*.e2e.{test,spec}.{ts,js}`,
+            `src/**/*.stories.{ts,js}`,
+            `src/tests/**/*.e2e.{test,spec,stories}.{ts,js}`,
+            `src/routes/**/*.e2e.{test,spec,stories}.{ts,js}`,
           ],
           includeSource: [`src/routes/**/*.{ts,js}`],
 
@@ -87,30 +127,6 @@ export default defineConfig({
               },
               {
                 browser: "webkit",
-              },
-            ],
-          },
-        },
-      },
-      {
-        extends: true,
-        plugins: [
-          // The plugin will run tests for the stories defined in your Storybook config
-          // See options at: https://storybook.js.org/docs/next/writing-tests/integrations/vitest-addon#storybooktest
-          storybookTest({
-            configDir: path.join(dirname, ".storybook"),
-          }),
-        ],
-        test: {
-          name: "storybook",
-          browser: {
-            api: 7357,
-            enabled: true,
-            headless: true,
-            provider: playwright({}),
-            instances: [
-              {
-                browser: "chromium",
               },
             ],
           },

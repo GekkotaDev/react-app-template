@@ -4,6 +4,7 @@ dev-dist
 dist
 dist-ssr
 *.local
+.content-collections
 .env
 .nitro
 .tanstack
@@ -13,7 +14,8 @@ dist-ssr
 __unconfig*
 todos.json
 
+# Testing Output
 bundle/stats
-
+html
 *storybook.log
 storybook-static
